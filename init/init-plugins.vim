@@ -141,6 +141,12 @@ if index(g:bundle_group, 'basic') >= 0
 	let g:signify_vcs_cmds = {
 			\ 'git': 'git diff --no-color --diff-algorithm=histogram --no-ext-diff -U0 -- %f',
 			\}
+
+	" 定义 git 快捷键
+	nmap <leader>gc :Git commit<cr>
+	nmap <leader>ga :Git add %<cr>
+	
+
 endif
 
 
@@ -169,7 +175,12 @@ if index(g:bundle_group, 'enhanced') >= 0
 
 	" 提供 gist 接口
 	Plug 'lambdalisue/vim-gista', { 'on': 'Gista' }
+
+	" 使用 CoC 进行代码补全提示
+	Plug 'neoclide/coc.nvim', {'branch': 'release'}
 	
+	source ~/.vim/vim-init/init/init-coc.vim
+
 	" ALT_+/- 用于按分隔符扩大缩小 v 选区
 	"map <m-=> <Plug>(expand_region_expand)
 	map <m--> <Plug>(expand_region_shrink)

@@ -116,6 +116,10 @@ if index(g:bundle_group, 'basic') >= 0
 
 	" 提供基于 TAGS 的定义预览，函数参数预览，quickfix 预览
 	Plug 'skywind3000/vim-preview'
+	
+	" 定义Preiview 快捷键
+	autocmd FileType qf nnoremap <silent><buffer> p :PreviewQuickfix<cr>
+	autocmd FileType qf nnoremap <silent><buffer> P :PreviewClose<cr>	
 
 	" Git 支持
 	Plug 'tpope/vim-fugitive'
@@ -194,7 +198,12 @@ if index(g:bundle_group, 'tags') >= 0
 	Plug 'ludovicchabant/vim-gutentags'
 
 	" 提供 GscopeFind 命令并自动处理好 gtags 数据库切换
+	" https://github.com/skywind3000/gutentags_plus
+	
 	" 支持光标移动到符号名上：<leader>cg 查看定义，<leader>cs 查看引用
+	" <leader>cc - 查看有哪些函数调用了该函数
+	" <leader>cf - 查找光标下的文件
+	" <leader>ci - 查找哪些文件 include 了本文件
 	Plug 'skywind3000/gutentags_plus'
 
 	" 设定项目目录标志：除了 .git/.svn 外，还有 .root 文件

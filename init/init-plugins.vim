@@ -17,6 +17,7 @@ if !exists('g:bundle_group')
 	let g:bundle_group = ['basic', 'tags', 'enhanced', 'filetypes', 'textobj']
 	let g:bundle_group += ['tags', 'airline', 'nerdtree', 'ale', 'echodoc']
 	let g:bundle_group += ['leaderf']
+	let g:bundle_group += ['ycm']
 endif
 
 
@@ -175,11 +176,6 @@ if index(g:bundle_group, 'enhanced') >= 0
 
 	" 提供 gist 接口
 	Plug 'lambdalisue/vim-gista', { 'on': 'Gista' }
-
-	" 使用 CoC 进行代码补全提示
-	Plug 'neoclide/coc.nvim', {'branch': 'release'}
-	
-	source ~/.vim/vim-init/init/init-coc.vim
 
 	" ALT_+/- 用于按分隔符扩大缩小 v 选区
 	"map <m-=> <Plug>(expand_region_expand)
@@ -528,6 +524,9 @@ if index(g:bundle_group, 'leaderf') >= 0
 	endif
 endif
 
+if index(g:bundle_group, 'leaderf') >= 0
+	Plug 'ycm-core/YouCompleteMe'
+endif
 
 "----------------------------------------------------------------------
 " 结束插件安装

@@ -449,11 +449,11 @@ if index(g:bundle_group, 'leaderf') >= 0
 		" CTRL+n 打开最近使用的文件 MRU，进行模糊匹配
 		noremap <c-n> :LeaderfMru<cr>
 
-		" ALT+p 打开函数列表，按 i 进入模糊匹配，ESC 退出
-		noremap <m-p> :LeaderfFunction!<cr>
+		" ALT+f 打开函数列表，按 i 进入模糊匹配，ESC 退出
+		noremap <m-f> :LeaderfFunction!<cr>
 
-		" ALT+SHIFT+p 打开 tag 列表，i 进入模糊匹配，ESC退出
-		noremap <m-P> :LeaderfBufTag!<cr>
+		" ALT+SHIFT+f 打开 tag 列表，i 进入模糊匹配，ESC退出
+		noremap <m-F> :LeaderfBufTag!<cr>
 
 		" ALT+n 打开 buffer 列表进行模糊匹配
 		noremap <m-n> :LeaderfBuffer<cr>

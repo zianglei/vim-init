@@ -18,6 +18,7 @@ if !exists('g:bundle_group')
 	let g:bundle_group += ['tags', 'airline', 'nerdtree', 'ale', 'echodoc']
 	let g:bundle_group += ['leaderf']
 	let g:bundle_group += ['ycm']
+	let g:bundle_group += ['wakatime']
 endif
 
 
@@ -452,14 +453,14 @@ if index(g:bundle_group, 'leaderf') >= 0
 		" ALT+f 打开函数列表，按 i 进入模糊匹配，ESC 退出
 		noremap <m-f> :LeaderfFunction!<cr>
 
-		" ALT+SHIFT+f 打开 tag 列表，i 进入模糊匹配，ESC退出
-		noremap <m-F> :LeaderfBufTag!<cr>
+		" ALT+m" 打开 tag 列表，i 进入模糊匹配，ESC退出
+		noremap <m-m> :LeaderfBufTag!<cr>
 
 		" ALT+n 打开 buffer 列表进行模糊匹配
 		noremap <m-n> :LeaderfBuffer<cr>
 
-		" ALT+m 全局 tags 模糊匹配
-		noremap <m-m> :LeaderfTag<cr>
+		" ALT+SHIFT+f 全局 tags 模糊匹配
+		noremap <m-F> :LeaderfTag<cr>
 
 		" 最大历史文件保存 2048 个
 		let g:Lf_MruMaxFiles = 2048
@@ -539,6 +540,13 @@ endif
 
 if index(g:bundle_group, 'leaderf') >= 0
 	Plug 'ycm-core/YouCompleteMe'
+endif
+
+"----------------------------------------------------------------------
+" 统计使用时间
+"----------------------------------------------------------------------
+if index(g:bundle_group, 'wakatime') >= 0
+	Plug 'wakatime/vim-wakatime'
 endif
 
 "----------------------------------------------------------------------
